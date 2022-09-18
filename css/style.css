@@ -1,0 +1,45 @@
+img {
+  border: 10px solid white;
+}
+
+body {
+  background-color: navy;
+}
+
+p {
+  color: white;
+  border: 1px solid white;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin-left: -2px;
+  margin-right: 2em;
+}
+
+nav ul {
+  border: 1px solid black;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+ul:nth-child(3n+1) {
+  background-color: #004d99;
+}
+
+ul:nth-child(3n+2) {
+  background-color: #0066cc;
+}
+
+ul:nth-child(3n+3) {
+  background-color: #0080ff;
+}
+
+/*# sourceMappingURL=style.css.map */

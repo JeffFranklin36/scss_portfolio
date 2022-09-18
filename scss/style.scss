@@ -1,0 +1,72 @@
+@use "sass:color";
+//function
+
+@import "imgConfig";
+//partial
+
+$body-color: navy;
+
+body {
+ background-color: $body-color;
+ @if $body-color != navy {
+  @error "Body color must be navy"
+ }
+}
+//error control
+//variable
+
+p {
+  $primary-color: white;
+  color: $primary-color;
+  border: 1px solid color.scale($primary-color, $lightness: 20%);
+}
+//variable
+
+
+@mixin reset-list {
+ margin: 0;
+ padding: 0;
+ list-style: none; 
+}
+
+@mixin horizontal-list {
+ @include reset-list;
+
+ li {
+   display: inline-block;
+   margin: {
+     left: -2px;
+     right: 2em;
+   }
+ }
+}
+
+nav ul {
+ @include horizontal-list;
+}
+//mix-in
+
+nav {
+ ul{
+  border: 1px solid black;
+  li {
+   a{
+    text-decoration: none;
+    color: black;
+   }
+  }
+ }
+}
+// nesting
+
+$base-color: #036;
+
+@for $i from 1 through 3 {
+  ul:nth-child(3n + #{$i}) {
+    background-color: lighten($base-color, $i * 10%);
+  }
+}
+//flow control
+
+// $body-color:  navy;
+//   @error "Invalid color: '#{$color}'.";
